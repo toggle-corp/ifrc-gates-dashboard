@@ -1,0 +1,9 @@
+type Query {
+}
+
+directive @rest(
+  type: String!
+  path: String!
+  endpoint: String!
+  method: String
+) on FIELD
