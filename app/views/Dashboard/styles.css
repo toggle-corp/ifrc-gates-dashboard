@@ -1,3 +1,36 @@
-.view{
-    display: flex
+.dashboard-navigation {
+    background-color: var(--color-foreground);
+
+    .dashboard-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--dui-spacing-small);
+        gap: var(--dui-spacing-medium);
+    }
+
+    .filter-and-export {
+        display: flex;
+        gap: var(--dui-spacing-small);
+
+        .filter-button {
+            border: var(--width-separator-thin) solid var(--color-separator);
+            border-radius: var(--radius-button);
+            padding: 0 var(--dui-spacing-extra-extra-small);
+        }
+
+        .export-button {
+            border: var(--width-separator-thin) solid var(--color-separator);
+            border-radius: var(--radius-button);
+            padding: var(--dui-spacing-extra-extra-small);
+        }
+    }
+
+    .dashboard-tablist {
+        display: flex;
+        justify-content: flex-end;
+        border: var(--width-separator-thin) solid var(--color-separator);
+        border-radius: var(--radius-button);
+    }
+
 }

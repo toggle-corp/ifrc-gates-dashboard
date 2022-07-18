@@ -1,62 +1,89 @@
 :root {
-    --tui-font-family-sans-serif: 'proxima-nova', sans-serif;
-    --tui-font-family-heading: 'freight-big-pro', sans-serif;
+    --dui-font-family-sans-serif: 'proxima-nova', sans-serif;
+    --dui-font-family-heading: 'freight-big-pro', sans-serif;
 
-    --tui-font-weight-light: 300;
-    --tui-font-weight-medium: 400;
-    --tui-font-weight-bold: 700;
-    --tui-font-weight-heading: 900;
+    --dui-font-weight-light: 300;
+    --dui-font-weight-medium: 400;
+    --dui-font-weight-bold: 700;
+    --dui-font-weight-heading: 900;
 
-    --tui-font-size-extra-small: 0.7rem;
-    --tui-font-size-small: 0.8rem;
-    --tui-font-size-medium: 1rem;
-    --tui-font-size-large: 1.26rem;
-    --tui-font-size-extra-large: 1.6rem;
-    --tui-font-size-super-large: 2.2rem;
-    --tui-font-size-mega-large: 3rem;
-    --tui-font-size-ultra-large: 4rem;
+    --dui-font-size-extra-small: 0.7rem;
+    --dui-font-size-small: 0.8rem;
+    --dui-font-size-medium: 1rem;
+    --dui-font-size-large: 1.26rem;
+    --dui-font-size-extra-large: 1.6rem;
+    --dui-font-size-super-large: 2.2rem;
+    --dui-font-size-mega-large: 3rem;
+    --dui-font-size-ultra-large: 4rem;
 
-    --tui-spacing-ultra-small: 0.1rem;
-    --tui-spacing-extra-extra-small: 0.3rem;
-    --tui-spacing-extra-small: 0.7rem;
-    --tui-spacing-small: 0.8rem;
-    --tui-spacing-medium: 1rem;
-    --tui-spacing-large: 1.26rem;
-    --tui-spacing-extra-large: 1.6rem;
-    --tui-spacing-super-large: 2.2rem;
-    --tui-spacing-mega-large: 3rem;
-    --tui-spacing-ultra-large: 4rem;
+    --dui-spacing-ultra-small: 0.1rem;
+    --dui-spacing-extra-extra-small: 0.3rem;
+    --dui-spacing-extra-small: 0.7rem;
+    --dui-spacing-small: 0.8rem;
+    --dui-spacing-medium: 1rem;
+    --dui-spacing-large: 1.26rem;
+    --dui-spacing-extra-large: 1.6rem;
+    --dui-spacing-super-large: 2.2rem;
+    --dui-spacing-mega-large: 3rem;
+    --dui-spacing-ultra-large: 4rem;
 
-    --tui-color-primary: rgb(65, 131, 196);
-    --tui-color-accent: rgb(65, 131, 196);
-    --tui-color-brand: rgb(25, 50, 86);
-    --tui-color-brand-hover: #06179E;
+    --dui-color-primary: rgb(65, 131, 196);
+    --dui-color-accent: rgb(65, 131, 196);
+    --dui-color-brand: rgb(25, 50, 86);
+    --dui-color-brand-hover: #06179E;
 
-    --tui-color-text: rgb(100,99,99);
-    --tui-filter-background-color: #EFF4FA;
+    --dui-color-text: rgb(100, 99, 99);
+    --dui-filter-background-color: #EFF4FA;
 
-    --tui-color-label: rgb(100,99,99);
-    --tui-color-description: rgb(100,99,99);
-    --tui-color-watermark: rgb(100,99,99);
+    --dui-color-label: rgb(100, 99, 99);
+    --dui-color-description: rgb(100, 99, 99);
+    --dui-color-watermark: rgb(100, 99, 99);
 
-    --tui-color-background: #eff4fa;
-    --tui-color-background-information: var(--tui-color-background);
+    --dui-color-background: #eff4fa;
+    --dui-color-background-information: var(--dui-color-background);
 
     --color-foreground: #ffffff;
     --color-background: #eff4fa;
     --color-background-dark: #193256;
     --color-text-on-dark: #ffffff;
     --color-text: #333333;
+
+    /* COLOR PALETTE */
+    --color-navbar: rgb(51, 64, 83);
+    --color-text-on-navbar: rgba(255, 255, 255, .9);
+
+    --color-primary: rgb(33, 105, 187);
+    --color-accent: rgb(91, 192, 222);
+    --color-danger: rgb(187, 33, 36);
+    --color-success: rgb(34, 187, 51);
+    --color-warning: rgb(240, 173, 78);
+
+    /* COLOR SEPARATOR */
+    --color-separator: rgb(39, 109, 184);
+    --color-separator-light: rgba(79, 143, 191, 0.3);
+
+    /* DIMENSIONS */
+    --width-separator-thin: 1px;
+    --width-separator-medium: 2px;
+    --width-separator-thick: 4px;
+
+    /* RADIUS */
+    --radius-card: 4px;
+    --radius-button: 4px;
+    --radius-input: 4px;
+    --radius-modal: 8px;
 }
 
 .base {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* country profile should take some space initially */
+    min-height: 100vh;
+    /* country profile should take some space initially */
     line-height: 1.5;
     color: var(--color-text);
     font-family: 'proxima-nova', sans-serif;
-    font-size: 1rem; /* durpal has set font-size on body */
+    font-size: 1rem;
+    /* durpal has set font-size on body */
 
     .view {
         flex-grow: 1;
@@ -65,10 +92,10 @@
 
 a {
     text-decoration: none;
-    color: var(--tui-color-accent);
+    color: var(--dui-color-accent);
 
     &:hover {
-        color: var(--tui-color-brand);
+        color: var(--dui-color-brand);
     }
 
     &:visited {

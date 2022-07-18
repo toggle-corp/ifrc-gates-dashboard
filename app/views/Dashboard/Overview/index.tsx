@@ -1,8 +1,98 @@
 import React from 'react';
+import {
+    Card,
+    ContainerCard,
+    CompactInformationCard,
+} from '@the-deep/deep-ui';
+import { _cs } from '@togglecorp/fujs';
+import {
+    IoChevronForward,
+} from 'react-icons/io5';
+import styles from './styles.css';
 
-function Overview() {
+interface OverviewProps {
+    className?: string;
+}
+
+function Overview(props: OverviewProps) {
+    const {
+        className,
+    } = props;
+
     return (
-        <div>Overview</div>
+        <div className={_cs(className, styles.overviewMain)}>
+            <div className={styles.cardCollection}>
+                <Card className={_cs(styles.globalSurgeCard, styles.cardInfo)}>
+                    <CompactInformationCard
+                        icon={<IoChevronForward />}
+                        label="Global Surge"
+                        value={200}
+                    />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </Card>
+                <Card className={_cs(styles.trendsCard, styles.cardInfo)}>
+                    <CompactInformationCard
+                        icon={<IoChevronForward />}
+                        label="Trends"
+                        value={150}
+                    />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nulla sed convallis quam, quis molestie nisi.
+                </Card>
+                <Card className={_cs(styles.regionsCard, styles.cardInfo)}>
+                    <CompactInformationCard
+                        icon={<IoChevronForward />}
+                        label="Regions"
+                        value={180}
+                    />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nulla sed convallis quam, quis molestie nisi.
+                </Card>
+            </div>
+            <div className={styles.mapContainer}>
+                <ContainerCard
+                    heading="Map Overview"
+                >
+                    {/* <Map
+                        mapStyle={lightStyle}
+                        mapOptions={{
+                            logoPosition: 'bottom-left',
+                        }}
+                        scaleControlShown
+                        navControlShown
+                    >
+                        <MapContainer className={styles.mapContainer} />
+                        <MapBounds
+                            bounds={undefined}
+                            padding={50}
+                        />
+                        <MapSource
+                            sourceKey="country"
+                            sourceOptions={{
+                                type: 'geojson',
+                            }}
+                            geoJson={undefined}
+                        >
+                            <MapLayer
+                                layerKey="country-fill"
+                                layerOptions={{
+                                    type: 'fill',
+                                    paint: countryFillPaint,
+                                }}
+                            />
+                            <MapLayer
+                                layerKey="country-line"
+                                layerOptions={{
+                                    type: 'line',
+                                    paint: countryLinePaint,
+                                }}
+                            />
+                        </MapSource>
+                    </Map> */}
+                    MAP ---COMPONENT---HERE
+                </ContainerCard>
+            </div>
+        </div>
     );
 }
 

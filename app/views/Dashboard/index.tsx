@@ -4,31 +4,58 @@ import {
     TabList,
     Tab,
     TabPanel,
+    Button,
 } from '@the-deep/deep-ui';
+import {
+    IoFilterSharp,
+    IoCloudDownloadOutline,
+} from 'react-icons/io5';
 
 import Overview from './Overview';
 import Country from './Country';
+import styles from './styles.css';
 
 function Dashboard() {
     return (
-        <div>
+        <div className={styles.dashboardNavigation}>
             <Tabs
                 useHash
                 defaultHash="overview"
                 variant="secondary"
             >
-                <TabList>
-                    <Tab
-                        name="overview"
-                    >
-                        OverView
-                    </Tab>
-                    <Tab
-                        name="country"
-                    >
-                        Country
-                    </Tab>
-                </TabList>
+                <div className={styles.dashboardButtons}>
+                    <div className={styles.filterAndExport}>
+                        <Button
+                            className={styles.filterButton}
+                            icons={<IoFilterSharp />}
+                            variant="secondary"
+                            name="secondary"
+                        >
+                            Filter
+                        </Button>
+
+                        <Button
+                            className={styles.exportButton}
+                            icons={<IoCloudDownloadOutline />}
+                            variant="secondary"
+                            name="secondary"
+                        >
+                            Export
+                        </Button>
+                    </div>
+                    <TabList className={styles.dashboardTablist}>
+                        <Tab
+                            name="overview"
+                        >
+                            OverView
+                        </Tab>
+                        <Tab
+                            name="country"
+                        >
+                            Country
+                        </Tab>
+                    </TabList>
+                </div>
                 <TabPanel
                     name="overview"
                 >

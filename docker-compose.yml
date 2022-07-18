@@ -17,4 +17,4 @@ services:
     volumes:
       - .:/code
     ports:
-      - '3080:3080'
+      - '3050:3050'

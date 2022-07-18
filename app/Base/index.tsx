@@ -5,7 +5,7 @@ import { ApolloClient, ApolloProvider } from '@apollo/client';
 import ReactGA from 'react-ga';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
-import '@togglecorp/toggle-ui/build/index.css';
+import '@the-deep/deep-ui/build/index.css';
 
 import { setMapboxToken } from '@togglecorp/re-map';
 
