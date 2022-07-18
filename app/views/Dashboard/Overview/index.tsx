@@ -28,44 +28,89 @@ function Overview(props: OverviewProps) {
 
     const data = [
         {
-            name: 'Page A',
+            name: 'Mar',
             uv: 4000,
             pv: 2400,
             amt: 2400,
         },
         {
-            name: 'Page B',
+            name: 'Apr',
             uv: 3000,
             pv: 1398,
             amt: 2210,
         },
         {
-            name: 'Page C',
+            name: 'May',
             uv: 2000,
             pv: 9800,
             amt: 2290,
         },
         {
-            name: 'Page D',
+            name: 'June',
             uv: 2780,
             pv: 3908,
             amt: 2000,
         },
         {
-            name: 'Page E',
+            name: 'July',
             uv: 1890,
             pv: 4800,
             amt: 2181,
         },
         {
-            name: 'Page F',
+            name: 'Aug',
             uv: 2390,
             pv: 3800,
             amt: 2500,
         },
         {
-            name: 'Page G',
+            name: 'Sept',
             uv: 3490,
+            pv: 4300,
+            amt: 2100,
+        },
+    ];
+
+    const barChartData = [
+        {
+            name: 'Americas',
+            country: 4000,
+            pv: 2400,
+            amt: 2400,
+        },
+        {
+            name: 'Asia/Pacific',
+            country: 3000,
+            pv: 1398,
+            amt: 2210,
+        },
+        {
+            name: 'ESAR',
+            country: 2000,
+            pv: 9800,
+            amt: 2290,
+        },
+        {
+            name: 'Europe',
+            country: 2780,
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: 'MENA',
+            country: 1890,
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: 'WCAR',
+            country: 2390,
+            pv: 3800,
+            amt: 2500,
+        },
+        {
+            name: 'Russia',
+            country: 3490,
             pv: 4300,
             amt: 2100,
         },
@@ -135,27 +180,16 @@ function Overview(props: OverviewProps) {
                 >
                     <ResponsiveContainer className={styles.responsiveContainer}>
                         <BarChart
-                            // width={500}
-                            // height={200}
-                            data={data}
-                            margin={{
-                                top: 5,
-                                right: 30,
-                                left: 20,
-                                bottom: 5,
-                            }}
+                            data={barChartData}
                         >
-                            <XAxis dataKey="name" />
-                            <YAxis />
+                            <Legend />
                             <Tooltip
                                 allowEscapeViewBox={{
                                     x: true,
                                     y: true,
                                 }}
                             />
-                            <Legend />
-                            <Bar dataKey="pv" fill="#8884d8" />
-                            <Bar dataKey="uv" fill="#82ca9d" />
+                            <Bar dataKey="country" fill="#1da12c" />
                         </BarChart>
                     </ResponsiveContainer>
                 </ContainerCard>
