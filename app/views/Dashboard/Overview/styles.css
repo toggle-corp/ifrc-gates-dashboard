@@ -29,6 +29,18 @@
         }
     }
 
+    .responsive-content {
+        min-height: 12rem;
+
+        .responsive-container {
+            overflow: hidden;
+        }
+    }
+
+    .cards-header {
+        font-size: small;
+    }
+
     .map-container {
         border: var(--width-separator-medium) solid var(--color-separator);
         border-radius: var(--dui-border-radius-card);

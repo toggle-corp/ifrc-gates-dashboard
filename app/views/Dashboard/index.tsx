@@ -57,11 +57,13 @@ function Dashboard() {
                     </div>
                     <TabList className={styles.dashboardTablist}>
                         <Tab
+                            className={styles.tabName}
                             name="overview"
                         >
                             Overview
                         </Tab>
                         <Tab
+                            className={styles.tabName}
                             name="country"
                         >
                             Country

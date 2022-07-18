@@ -1,5 +1,6 @@
 .dashboard-navigation {
     background-color: var(--color-foreground);
+    padding: 0 var(--dui-spacing-ultra-large);
 
     .dashboard-buttons {
         display: flex;
@@ -26,9 +27,14 @@
 
     .dashboard-tablist {
         display: flex;
+        flex-wrap: wrap;
         justify-content: flex-end;
         border: var(--width-separator-thin) solid var(--color-separator);
         border-radius: var(--dui-border-radius-button);
     }
 
+        .tab-name {
+            padding: var(--dui-spacing-extra-small);
+        }
+    }
 }
