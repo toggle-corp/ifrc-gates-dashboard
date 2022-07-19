@@ -28,8 +28,8 @@ function Dashboard() {
                         <Button
                             className={styles.filterButton}
                             icons={<IoFilterSharp />}
-                            variant="secondary"
-                            name="secondary"
+                            variant="nlp-general"
+                            name="undefined"
                         >
                             Filter
                         </Button>
@@ -37,8 +37,8 @@ function Dashboard() {
                         <Button
                             className={styles.exportButton}
                             icons={<IoCloudDownloadOutline />}
-                            variant="secondary"
-                            name="secondary"
+                            variant="nlp-general"
+                            name="undefined"
                         >
                             Export
                         </Button>

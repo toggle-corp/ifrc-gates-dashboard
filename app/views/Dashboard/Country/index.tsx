@@ -38,6 +38,21 @@ interface CountryProps {
 const KeySelector = () => 'key';
 const LabelSelector = () => 'label';
 
+const countryNames = [
+    {
+        key: '001',
+        label: 'Afganisthan',
+    },
+    {
+        key: '002',
+        label: 'Nepal',
+    },
+    {
+        key: '003',
+        label: 'Bangkok',
+    },
+];
+
 function Country(props: CountryProps) {
     const {
         className,
@@ -58,20 +73,7 @@ function Country(props: CountryProps) {
                         label="Choosen countries:"
                         name="country_name"
                         onChange={handleBadge}
-                        options={[
-                            {
-                                key: '001',
-                                label: 'Afganisthan',
-                            },
-                            {
-                                key: '002',
-                                label: 'Nepal',
-                            },
-                            {
-                                key: '003',
-                                label: 'Bangkok',
-                            },
-                        ]}
+                        options={countryNames}
                         value="001"
                     />
                 </div>

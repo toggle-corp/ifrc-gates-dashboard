@@ -16,13 +16,11 @@
         .filter-button {
             border: var(--width-separator-thin) solid var(--color-separator);
             border-radius: var(--radius-button);
-            padding: 0 var(--dui-spacing-extra-extra-small);
         }
 
         .export-button {
             border: var(--width-separator-thin) solid var(--color-separator);
             border-radius: var(--radius-button);
-            padding: var(--dui-spacing-extra-extra-small);
         }
     }
 

@@ -6,7 +6,7 @@
 
     .country-detail-wrapper {
         display: flex;
-        flex-basis: calc(75% - var(--dui-spacing-medium));
+        flex-basis: 75%;
         flex-grow: 1;
         flex-wrap: wrap;
         gap: var(--dui-spacing-large);
@@ -27,20 +27,17 @@
             border: var(--width-separator-medium) solid var(--color-separator);
             border-radius: var(--radius-card);
             padding: var(--dui-spacing-medium);
-            width: 100%;
         }
 
         .country-trend {
             border: var(--width-separator-medium) solid var(--color-separator);
             border-radius: var(--radius-card);
-            width: 100%;
-            height: 100%;
         }
     }
 
     .country-info {
-        flex-basis: calc(25% - var(--dui-spacing-medium));
-        flex-grow: 1;
+        flex-basis: 25%;
+        flex-shrink: 0;
         border: var(--width-separator-medium) solid var(--color-separator);
         border-radius: var(--radius-card);
     }
