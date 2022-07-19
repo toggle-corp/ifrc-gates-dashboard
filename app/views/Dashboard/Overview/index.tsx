@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     ContainerCard,
+    CompactInformationCard,
 } from '@the-deep/deep-ui';
 import { _cs } from '@togglecorp/fujs';
 import {
@@ -13,7 +14,11 @@ import {
     Tooltip,
     Legend,
     ResponsiveContainer,
+    LabelList,
 } from 'recharts';
+import {
+    IoBookmark,
+} from 'react-icons/io5';
 
 import styles from './styles.css';
 
@@ -26,91 +31,98 @@ function Overview(props: OverviewProps) {
         className,
     } = props;
 
-    const data = [
+    const lineChartData = [
         {
             name: 'Mar',
             uv: 4000,
             pv: 2400,
             amt: 2400,
+            range: 3500,
         },
         {
             name: 'Apr',
             uv: 3000,
             pv: 1398,
             amt: 2210,
+            range: 1004,
         },
         {
             name: 'May',
             uv: 2000,
             pv: 9800,
             amt: 2290,
+            range: 1580,
         },
         {
             name: 'June',
             uv: 2780,
             pv: 3908,
             amt: 2000,
+            range: 3000,
         },
         {
             name: 'July',
             uv: 1890,
             pv: 4800,
             amt: 2181,
+            range: 2600,
         },
         {
             name: 'Aug',
             uv: 2390,
             pv: 3800,
             amt: 2500,
+            range: 3900,
         },
         {
             name: 'Sept',
             uv: 3490,
             pv: 4300,
             amt: 2100,
+            range: 2900,
         },
     ];
 
     const barChartData = [
         {
-            name: 'Americas',
-            country: 4000,
+            name: 'USA',
+            range: '400M',
             pv: 2400,
-            amt: 2400,
+            amt: 1900,
         },
         {
-            name: 'Asia/Pacific',
-            country: 3000,
+            name: 'Asia',
+            range: '300M',
             pv: 1398,
             amt: 2210,
         },
         {
             name: 'ESAR',
-            country: 2000,
+            range: '200M',
             pv: 9800,
-            amt: 2290,
+            amt: 2010,
         },
         {
-            name: 'Europe',
-            country: 2780,
+            name: 'Eur',
+            range: '270M',
             pv: 3908,
-            amt: 2000,
+            amt: 1800,
         },
         {
             name: 'MENA',
-            country: 1890,
+            range: '170M',
             pv: 4800,
-            amt: 2181,
+            amt: 1181,
         },
         {
             name: 'WCAR',
-            country: 2390,
+            range: '290M',
             pv: 3800,
-            amt: 2500,
+            amt: 2200,
         },
         {
-            name: 'Russia',
-            country: 3490,
+            name: 'Rus',
+            range: '210M',
             pv: 4300,
             amt: 2100,
         },
@@ -121,17 +133,28 @@ function Overview(props: OverviewProps) {
             <div className={styles.cardCollection}>
                 <ContainerCard
                     className={_cs(styles.globalSurgeCard, styles.cardInfo)}
-                    heading="Outbreak"
+                    heading="Total number of cases"
                     headingClassName={styles.cardsHeader}
-                    headerDescription="Sub total of cases"
+                    headerDescription={(
+                        <p>
+                            All Outbreak numbers:
+                            <ul>
+                                <li>Covid 19</li>
+                                <li>Monkey Pox</li>
+                                <li>Ebola</li>
+                                <li>Lorem</li>
+                                <li>Epsum</li>
+                            </ul>
+                        </p>
+                    )}
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    All Outbreak numbers:
-                    - covid 19
-                    - MonkeyPox
-                    - Ebola
-                    - Lorem
-                    - Epsum
+                    <CompactInformationCard
+                        className={styles.statCard}
+                        icon={<IoBookmark />}
+                        label="Approx."
+                        spacing="loose"
+                        value={140}
+                    />
                 </ContainerCard>
                 <ContainerCard
                     className={_cs(styles.trendsCard, styles.cardInfo)}
@@ -144,7 +167,7 @@ function Overview(props: OverviewProps) {
                         <LineChart
                             // width={500}
                             // height={200}
-                            data={data}
+                            data={lineChartData}
                             margin={{
                                 top: 5,
                                 right: 30,
@@ -164,17 +187,31 @@ function Overview(props: OverviewProps) {
                             <Line
                                 type="monotone"
                                 dataKey="pv"
-                                stroke="#8884d8"
+                                stroke="#4bda8a"
                                 activeDot={{ r: 8 }}
                             />
-                            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                            <Line
+                                type="monotone"
+                                dataKey="uv"
+                                stroke="#2169bb"
+                            />
+                            <Line
+                                type="monotone"
+                                dataKey="amt"
+                                stroke="#d2e82d"
+                            />
+                            <Line
+                                type="monotone"
+                                dataKey="range"
+                                stroke="#ba2123"
+                            />
                         </LineChart>
                     </ResponsiveContainer>
                 </ContainerCard>
                 <ContainerCard
                     className={_cs(styles.regionsCard, styles.cardInfo)}
                     contentClassName={styles.responsiveContent}
-                    heading="Region"
+                    heading="Regional Breakdown"
                     headingClassName={styles.cardsHeader}
                     headerDescription="Average indicator value weighted by country's populations (Apr 2022)"
                 >
@@ -182,14 +219,18 @@ function Overview(props: OverviewProps) {
                         <BarChart
                             data={barChartData}
                         >
-                            <Legend />
                             <Tooltip
                                 allowEscapeViewBox={{
                                     x: true,
                                     y: true,
                                 }}
                             />
-                            <Bar dataKey="country" fill="#1da12c" />
+                            <XAxis dataKey="name">
+                                <LabelList dataKey="name" position="bottom" />
+                            </XAxis>
+                            <Bar dataKey="amt" fill="#38c073">
+                                <LabelList dataKey="range" position="top" />
+                            </Bar>
                         </BarChart>
                     </ResponsiveContainer>
                 </ContainerCard>
