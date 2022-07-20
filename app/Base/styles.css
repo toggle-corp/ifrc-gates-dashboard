@@ -2,8 +2,8 @@
     /*
      * Fonts
      */
-    --dui-font-family-sans-serif: 'proxima-nova', sans-serif;
-    --dui-font-family-heading: 'freight-big-pro', sans-serif;
+    --dui-font-family-sans-serif: var(--font-family-sans-serif);
+    --dui-font-family-heading: var(--font-family-sans-serif);
 
     --dui-font-size-super-small: 0.5rem;
     --dui-font-size-extra-small: 0.63rem;
@@ -154,11 +154,8 @@
 .base {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    /* country profile should take some space initially */
     line-height: 1.5;
     color: var(--color-text);
-    font-family: 'proxima-nova', sans-serif;
 
     .view {
         flex-grow: 1;

@@ -53,42 +53,6 @@ function Overview(props: OverviewProps) {
                 <ContainerCard
                     heading="Map Overview"
                 >
-                    {/* <Map
-                        mapStyle={lightStyle}
-                        mapOptions={{
-                            logoPosition: 'bottom-left',
-                        }}
-                        scaleControlShown
-                        navControlShown
-                    >
-                        <MapContainer className={styles.mapContainer} />
-                        <MapBounds
-                            bounds={undefined}
-                            padding={50}
-                        />
-                        <MapSource
-                            sourceKey="country"
-                            sourceOptions={{
-                                type: 'geojson',
-                            }}
-                            geoJson={undefined}
-                        >
-                            <MapLayer
-                                layerKey="country-fill"
-                                layerOptions={{
-                                    type: 'fill',
-                                    paint: countryFillPaint,
-                                }}
-                            />
-                            <MapLayer
-                                layerKey="country-line"
-                                layerOptions={{
-                                    type: 'line',
-                                    paint: countryLinePaint,
-                                }}
-                            />
-                        </MapSource>
-                    </Map> */}
                     MAP ---COMPONENT---HERE
                 </ContainerCard>
             </div>
