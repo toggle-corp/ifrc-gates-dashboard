@@ -21,7 +21,7 @@ import apolloConfig from '#base/configs/apollo';
 import { trackingId, gaConfig } from '#base/configs/googleAnalytics';
 import { mapboxToken } from '#base/configs/env';
 
-import Dashboard from '../views/Dashboard';
+import Dashboard from '#views/Dashboard';
 
 import styles from './styles.css';
 

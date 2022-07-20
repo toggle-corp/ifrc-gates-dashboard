@@ -13,7 +13,7 @@
 
         .country-tags {
             border: var(--width-separator-medium) solid var(--color-separator);
-            border-radius: var(--radius-card);
+            border-radius: var(--dui-border-radius-card);
             width: 100%;
 
             .badge-list {
@@ -25,13 +25,13 @@
             display: flex;
             justify-content: space-between;
             border: var(--width-separator-medium) solid var(--color-separator);
-            border-radius: var(--radius-card);
+            border-radius: var(--dui-border-radius-card);
             padding: var(--dui-spacing-medium);
         }
 
         .country-trend {
             border: var(--width-separator-medium) solid var(--color-separator);
-            border-radius: var(--radius-card);
+            border-radius: var(--dui-border-radius-card);
         }
     }
 
@@ -39,6 +39,6 @@
         flex-basis: 25%;
         flex-shrink: 0;
         border: var(--width-separator-medium) solid var(--color-separator);
-        border-radius: var(--radius-card);
+        border-radius: var(--dui-border-radius-card);
     }
 }

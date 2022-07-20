@@ -16,6 +16,14 @@ import Country from './Country';
 import styles from './styles.css';
 
 function Dashboard() {
+    const handleAdvancedFilters = () => {
+        console.log('Handled main filter::>>');
+    };
+
+    const handleExport = () => {
+        console.log('Handled the export::>>');
+    };
+
     return (
         <div className={styles.dashboardNavigation}>
             <Tabs
@@ -29,7 +37,8 @@ function Dashboard() {
                             className={styles.filterButton}
                             icons={<IoFilterSharp />}
                             variant="nlp-general"
-                            name="undefined"
+                            name={undefined}
+                            onClick={handleAdvancedFilters}
                         >
                             Filter
                         </Button>
@@ -38,7 +47,8 @@ function Dashboard() {
                             className={styles.exportButton}
                             icons={<IoCloudDownloadOutline />}
                             variant="nlp-general"
-                            name="undefined"
+                            name={undefined}
+                            onClick={handleExport}
                         >
                             Export
                         </Button>
@@ -47,7 +57,7 @@ function Dashboard() {
                         <Tab
                             name="overview"
                         >
-                            OverView
+                            Overview
                         </Tab>
                         <Tab
                             name="country"
