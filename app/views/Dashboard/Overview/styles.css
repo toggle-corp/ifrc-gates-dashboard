@@ -1,13 +1,13 @@
 .overview-main {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--dui-spacing-medium);
+    gap: var(--dui-spacing-small);
     padding: var(--dui-spacing-medium);
 
     .card-collection {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--dui-spacing-medium);
+        gap: var(--dui-spacing-small);
         width: 100%;
 
         .card-info {
@@ -18,19 +18,19 @@
         }
 
         .global-surge-card {
-            flex-basis: 25%;
+            flex-basis: 20%;
         }
 
         .trends-card {
-            flex-basis: calc(40% - var(--dui-spacing-medium));
+            flex-basis: calc(45% - var(--dui-spacing-small));
         }
 
         .regions-card {
-            flex-basis: calc(35% - var(--dui-spacing-medium));
+            flex-basis: calc(35% - var(--dui-spacing-small));
         }
 
         .stat-card {
-            color: green
+            color: green;
         }
     }
 

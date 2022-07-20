@@ -26,107 +26,107 @@ interface OverviewProps {
     className?: string;
 }
 
+const lineChartData = [
+    {
+        name: 'Mar',
+        uv: 4000,
+        pv: 2400,
+        amt: 2400,
+        range: 3500,
+    },
+    {
+        name: 'Apr',
+        uv: 3000,
+        pv: 1398,
+        amt: 2210,
+        range: 1004,
+    },
+    {
+        name: 'May',
+        uv: 2000,
+        pv: 9800,
+        amt: 2290,
+        range: 1580,
+    },
+    {
+        name: 'June',
+        uv: 2780,
+        pv: 3908,
+        amt: 2000,
+        range: 3000,
+    },
+    {
+        name: 'July',
+        uv: 1890,
+        pv: 4800,
+        amt: 2181,
+        range: 2600,
+    },
+    {
+        name: 'Aug',
+        uv: 2390,
+        pv: 3800,
+        amt: 2500,
+        range: 3900,
+    },
+    {
+        name: 'Sept',
+        uv: 3490,
+        pv: 4300,
+        amt: 2100,
+        range: 2900,
+    },
+];
+
+const barChartData = [
+    {
+        name: 'USA',
+        range: '400M',
+        pv: 2400,
+        amt: 1900,
+    },
+    {
+        name: 'Asia',
+        range: '300M',
+        pv: 1398,
+        amt: 2210,
+    },
+    {
+        name: 'ESAR',
+        range: '200M',
+        pv: 9800,
+        amt: 2010,
+    },
+    {
+        name: 'Eur',
+        range: '270M',
+        pv: 3908,
+        amt: 1800,
+    },
+    {
+        name: 'MENA',
+        range: '170M',
+        pv: 4800,
+        amt: 1181,
+    },
+    {
+        name: 'WCAR',
+        range: '290M',
+        pv: 3800,
+        amt: 2200,
+    },
+    {
+        name: 'Rus',
+        range: '210M',
+        pv: 4300,
+        amt: 2100,
+    },
+];
+
 function Overview(props: OverviewProps) {
     const {
         className,
     } = props;
-
-    const lineChartData = [
-        {
-            name: 'Mar',
-            uv: 4000,
-            pv: 2400,
-            amt: 2400,
-            range: 3500,
-        },
-        {
-            name: 'Apr',
-            uv: 3000,
-            pv: 1398,
-            amt: 2210,
-            range: 1004,
-        },
-        {
-            name: 'May',
-            uv: 2000,
-            pv: 9800,
-            amt: 2290,
-            range: 1580,
-        },
-        {
-            name: 'June',
-            uv: 2780,
-            pv: 3908,
-            amt: 2000,
-            range: 3000,
-        },
-        {
-            name: 'July',
-            uv: 1890,
-            pv: 4800,
-            amt: 2181,
-            range: 2600,
-        },
-        {
-            name: 'Aug',
-            uv: 2390,
-            pv: 3800,
-            amt: 2500,
-            range: 3900,
-        },
-        {
-            name: 'Sept',
-            uv: 3490,
-            pv: 4300,
-            amt: 2100,
-            range: 2900,
-        },
-    ];
-
-    const barChartData = [
-        {
-            name: 'USA',
-            range: '400M',
-            pv: 2400,
-            amt: 1900,
-        },
-        {
-            name: 'Asia',
-            range: '300M',
-            pv: 1398,
-            amt: 2210,
-        },
-        {
-            name: 'ESAR',
-            range: '200M',
-            pv: 9800,
-            amt: 2010,
-        },
-        {
-            name: 'Eur',
-            range: '270M',
-            pv: 3908,
-            amt: 1800,
-        },
-        {
-            name: 'MENA',
-            range: '170M',
-            pv: 4800,
-            amt: 1181,
-        },
-        {
-            name: 'WCAR',
-            range: '290M',
-            pv: 3800,
-            amt: 2200,
-        },
-        {
-            name: 'Rus',
-            range: '210M',
-            pv: 4300,
-            amt: 2100,
-        },
-    ];
 
     return (
         <div className={_cs(className, styles.overviewMain)}>
@@ -166,13 +166,10 @@ function Overview(props: OverviewProps) {
                     <ResponsiveContainer className={styles.responsiveContainer}>
                         <LineChart
                             // width={500}
-                            // height={200}
+                            // height={100}
                             data={lineChartData}
                             margin={{
-                                top: 5,
-                                right: 30,
-                                left: 20,
-                                bottom: 5,
+                                right: 20,
                             }}
                         >
                             <XAxis dataKey="name" />
@@ -183,7 +180,7 @@ function Overview(props: OverviewProps) {
                                     y: true,
                                 }}
                             />
-                            <Legend />
+                            <Legend iconType="square" />
                             <Line
                                 type="monotone"
                                 dataKey="pv"
