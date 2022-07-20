@@ -1,0 +1,44 @@
+.country-main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--dui-spacing-small);
+    gap: var(--dui-spacing-large);
+
+    .country-detail-wrapper {
+        display: flex;
+        flex-basis: 75%;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        gap: var(--dui-spacing-large);
+
+        .country-tags {
+            border: var(--width-separator-medium) solid var(--color-separator);
+            border-radius: var(--dui-border-radius-card);
+            width: 100%;
+
+            .badge-list {
+                padding: var(--dui-spacing-extra-extra-small);
+            }
+        }
+
+        .info-cards {
+            display: flex;
+            justify-content: space-between;
+            border: var(--width-separator-medium) solid var(--color-separator);
+            border-radius: var(--dui-border-radius-card);
+            padding: var(--dui-spacing-medium);
+        }
+
+        .country-trend {
+            border: var(--width-separator-medium) solid var(--color-separator);
+            border-radius: var(--dui-border-radius-card);
+        }
+    }
+
+    .country-info {
+        flex-basis: 25%;
+        flex-shrink: 0;
+        border: var(--width-separator-medium) solid var(--color-separator);
+        border-radius: var(--dui-border-radius-card);
+    }
+}

@@ -1,0 +1,34 @@
+.dashboard-navigation {
+    background-color: var(--color-foreground);
+
+    .dashboard-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--dui-spacing-small);
+        gap: var(--dui-spacing-medium);
+    }
+
+    .filter-and-export {
+        display: flex;
+        gap: var(--dui-spacing-small);
+
+        .filter-button {
+            border: var(--width-separator-thin) solid var(--color-separator);
+            border-radius: var(--dui-border-radius-button);
+        }
+
+        .export-button {
+            border: var(--width-separator-thin) solid var(--color-separator);
+            border-radius: var(--dui-border-radius-button);
+        }
+    }
+
+    .dashboard-tablist {
+        display: flex;
+        justify-content: flex-end;
+        border: var(--width-separator-thin) solid var(--color-separator);
+        border-radius: var(--dui-border-radius-button);
+    }
+
+}

@@ -5,7 +5,7 @@ import { ApolloClient, ApolloProvider } from '@apollo/client';
 import ReactGA from 'react-ga';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
-import '@togglecorp/toggle-ui/build/index.css';
+import '@the-deep/deep-ui/build/index.css';
 
 import { setMapboxToken } from '@togglecorp/re-map';
 
@@ -20,6 +20,8 @@ import sentryConfig from '#base/configs/sentry';
 import apolloConfig from '#base/configs/apollo';
 import { trackingId, gaConfig } from '#base/configs/googleAnalytics';
 import { mapboxToken } from '#base/configs/env';
+
+import Dashboard from '#views/Dashboard';
 
 import styles from './styles.css';
 
@@ -58,7 +60,7 @@ function Base() {
             if (currentPage === 'dashboard') {
                 return (
                     <div className={styles.view}>
-                        Dashboard
+                        <Dashboard />
                     </div>
                 );
             }

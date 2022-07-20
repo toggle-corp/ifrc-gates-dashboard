@@ -1,62 +1,161 @@
 :root {
-    --tui-font-family-sans-serif: 'proxima-nova', sans-serif;
-    --tui-font-family-heading: 'freight-big-pro', sans-serif;
+    /*
+     * Fonts
+     */
+    --dui-font-family-sans-serif: var(--font-family-sans-serif);
+    --dui-font-family-heading: var(--font-family-sans-serif);
 
-    --tui-font-weight-light: 300;
-    --tui-font-weight-medium: 400;
-    --tui-font-weight-bold: 700;
-    --tui-font-weight-heading: 900;
+    --dui-font-size-super-small: 0.5rem;
+    --dui-font-size-extra-small: 0.63rem;
+    --dui-font-size-small: 0.75rem;
+    --dui-font-size-medium: 0.875rem;
+    --dui-font-size-large: 1rem;
+    --dui-font-size-extra-large: 1.25rem;
+    --dui-font-size-super-large: 2rem;
+    --dui-font-size-mega-large: 3rem;
+    --dui-font-size-ultra-large: 4.6rem;
 
-    --tui-font-size-extra-small: 0.7rem;
-    --tui-font-size-small: 0.8rem;
-    --tui-font-size-medium: 1rem;
-    --tui-font-size-large: 1.26rem;
-    --tui-font-size-extra-large: 1.6rem;
-    --tui-font-size-super-large: 2.2rem;
-    --tui-font-size-mega-large: 3rem;
-    --tui-font-size-ultra-large: 4rem;
+    --dui-font-size-heading-extra-large: var(--dui-font-size-super-large);
+    --dui-font-size-heading-large: 1.5rem;
+    --dui-font-size-heading-medium: var(--dui-font-size-extra-large);
+    --dui-font-size-heading-small: var(--dui-font-size-extra-large);
+    --dui-font-size-heading-extra-small: var(--dui-font-size-large);
 
-    --tui-spacing-ultra-small: 0.1rem;
-    --tui-spacing-extra-extra-small: 0.3rem;
-    --tui-spacing-extra-small: 0.7rem;
-    --tui-spacing-small: 0.8rem;
-    --tui-spacing-medium: 1rem;
-    --tui-spacing-large: 1.26rem;
-    --tui-spacing-extra-large: 1.6rem;
-    --tui-spacing-super-large: 2.2rem;
-    --tui-spacing-mega-large: 3rem;
-    --tui-spacing-ultra-large: 4rem;
+    --dui-font-weight-light: 400;
+    --dui-font-weight-regular: 400;
+    --dui-font-weight-medium: 400;
+    --dui-font-weight-bold: 600;
 
-    --tui-color-primary: rgb(65, 131, 196);
-    --tui-color-accent: rgb(65, 131, 196);
-    --tui-color-brand: rgb(25, 50, 86);
-    --tui-color-brand-hover: #06179E;
+    /*
+     * Dimensions
+     */
+    --dui-spacing-ultra-small: 0.1rem;
+    --dui-spacing-extra-extra-small: 0.3rem;
+    --dui-spacing-super-small: 0.14rem;
+    --dui-spacing-extra-small: 0.26rem;
+    --dui-spacing-small: 0.41rem;
+    --dui-spacing-medium: 0.79rem;
+    --dui-spacing-large: 1.17rem;
+    --dui-spacing-extra-large: 1.83rem;
+    --dui-spacing-super-large: 3.01rem;
+    --dui-spacing-mega-large: 4.81rem;
+    --dui-spacing-ultra-large: 6.89rem;
 
-    --tui-color-text: rgb(100,99,99);
-    --tui-filter-background-color: #EFF4FA;
+    --dui-width-separator-thin: 1px;
+    --dui-width-separator-medium: 2px;
+    --dui-width-separator-thick: 4px;
+    --dui-width-separator-dense: 7px;
 
-    --tui-color-label: rgb(100,99,99);
-    --tui-color-description: rgb(100,99,99);
-    --tui-color-watermark: rgb(100,99,99);
+    --dui-width-active-border: 1.5625rem;
 
-    --tui-color-background: #eff4fa;
-    --tui-color-background-information: var(--tui-color-background);
+    --dui-opacity-watermark: 0.3;
+    --dui-opacity-disabled-element: 0.4;
+    --dui-saturation-disabled-element: 0.4;
+
+    --dui-width-popup-tip: 1rem;
+    --dui-offset-popup-tip: 0.625rem;
+    --dui-height-popup-tip: 0.625rem;
+
+    --dui-width-max-modal: 96vw;
+    --dui-height-max-modal: 96vh;
+
+    --dui-width-modal-extra-small: 360px;
+    --dui-height-modal-extra-small: 240px;
+
+    --dui-width-modal-small: 480px;
+    --dui-height-modal-small: 360px;
+
+    --dui-width-modal-medium: 640px;
+    --dui-height-modal-medium: 560px;
+
+    --dui-width-modal-large: 800px;
+    --dui-height-modal-large: 720px;
+
+    --dui-width-modal-cover: 96vw;
+    --dui-height-modal-cover: 96vh;
+
+    --dui-width-min-modal: 20rem;
+    --dui-width-scrollbar: 0.5rem;
+
+    --dui-width-calendar-date: 2.4rem;
+
+    /* COLOR PALETTE */
+    --dui-color-primary: rgb(65, 131, 196);
+    --dui-color-accent: rgb(65, 131, 196);
+    --dui-color-brand: rgb(25, 50, 86);
+    --dui-color-brand-hover: #06179E;
+
+    --dui-color-text: rgb(100, 99, 99);
+    --dui-filter-background-color: #EFF4FA;
+
+    --dui-color-label: rgb(100, 99, 99);
+    --dui-color-description: rgb(100, 99, 99);
+    --dui-color-watermark: rgb(100, 99, 99);
+
+    --dui-color-background: #eff4fa;
+    --dui-color-background-information: var(--dui-color-background);
 
     --color-foreground: #ffffff;
     --color-background: #eff4fa;
     --color-background-dark: #193256;
     --color-text-on-dark: #ffffff;
     --color-text: #333333;
+
+    --color-navbar: rgb(51, 64, 83);
+    --color-text-on-navbar: rgba(255, 255, 255, .9);
+
+    --color-primary: rgb(33, 105, 187);
+    --color-accent: rgb(91, 192, 222);
+    --color-danger: rgb(187, 33, 36);
+    --color-success: rgb(34, 187, 51);
+    --color-warning: rgb(240, 173, 78);
+
+    /* COLOR SEPARATOR */
+    --color-separator: rgb(39, 109, 184);
+    --color-separator-light: rgba(79, 143, 191, 0.3);
+
+    /* DIMENSIONS */
+    --width-separator-thin: 1px;
+    --width-separator-medium: 2px;
+    --width-separator-thick: 4px;
+
+    /* RADIUS */
+    /* FIXME: should either be border-radius or radius-border or radius */
+    --dui-radius-border-small: .12rem;
+    --dui-radius-border-medium: .2rem;
+    --dui-radius-popup-border: .2rem;
+    --dui-radius-blur-shadow: .2rem;
+    --dui-radius-modal: .2rem;
+
+    --dui-radius-border-input-section: 0;
+    --dui-radius-border-alerts: 0.24rem;
+
+    --dui-radius-scrollbar-border: 0.25rem;
+
+    --dui-border-radius-card: 0.5rem;
+    --dui-border-radius-button: 0.5rem;
+    --dui-border-radius-modal: 0.5rem;
+    --dui-border-radius-tag: 1.5rem;
+    --dui-border-radius-progress-bar: 1rem;
+
+    /*
+     * TIMING
+     */
+    --dui-duration-transition-short: 100ms;
+    --dui-duration-transition-medium: 200ms;
+    --dui-duration-transition-long: 400ms;
+
+    --dui-duration-delay-short: 150ms;
+    --dui-duration-delay-medium: 250ms;
+    --dui-duration-delay-long: 400ms;
+
 }
 
 .base {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* country profile should take some space initially */
     line-height: 1.5;
     color: var(--color-text);
-    font-family: 'proxima-nova', sans-serif;
-    font-size: 1rem; /* durpal has set font-size on body */
 
     .view {
         flex-grow: 1;
@@ -65,10 +164,10 @@
 
 a {
     text-decoration: none;
-    color: var(--tui-color-accent);
+    color: var(--dui-color-accent);
 
     &:hover {
-        color: var(--tui-color-brand);
+        color: var(--dui-color-brand);
     }
 
     &:visited {
