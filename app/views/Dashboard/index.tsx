@@ -17,10 +17,12 @@ import styles from './styles.css';
 
 function Dashboard() {
     const handleAdvancedFilters = () => {
+        // eslint-disable-next-line no-console
         console.log('Handled main filter::>>');
     };
 
     const handleExport = () => {
+        // eslint-disable-next-line no-console
         console.log('Handled the export::>>');
     };
 

@@ -59,6 +59,7 @@ function Country(props: CountryProps) {
     } = props;
 
     const handleBadge = useCallback(() => {
+        // eslint-disable-next-line no-console
         console.log('Clicked handle badge::');
     }, []);
 
