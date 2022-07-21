@@ -1,37 +1,40 @@
-.country-main {
+.country-wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--dui-spacing-medium);
+    gap: var(--dui-spacing-extra-large);
 
-    .country-tags {
-        border: var(--width-separator-thin) solid var(--color-separator-light);
-        border-radius: var(--dui-border-radius-card);
-
-        .badge-list {
-            padding: var(--dui-spacing-medium);
-        }
-    }
-
-    .stats {
+    .country-main {
         display: flex;
-        gap: var(--dui-spacing-small);
-    }
-    .country-detail-wrapper {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        gap: var(--dui-spacing-medium);
+        flex-wrap: wrap;
+        gap: var(--dui-spacing-extra-large);
 
-        .info-cards {
+        .country-detail-wrapper {
             display: flex;
-            border: var(--width-separator-thin) solid var(--color-separator-light);
-            border-radius: var(--dui-border-radius-card);
-            padding: var(--dui-spacing-medium);
-            gap: var(--dui-spacing-large);
-        }
-        .country-trend {
-            display: flex;
+            flex-direction: column;
             flex-grow: 1;
+            flex-wrap: wrap;
+            gap: var(--dui-spacing-small);
+
+            .status-container {
+                border: var(--width-separator-thin) solid var(--color-separator-light);
+                border-radius: var(--dui-border-radius-card);
+
+                .info-cards {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: var(--dui-spacing-medium);
+                }
+            }
+
+            .country-trend {
+                border: var(--width-separator-thin) solid var(--color-separator-light);
+                border-radius: var(--dui-border-radius-card);
+            }
+        }
+
+        .country-info {
+            flex-basis: 25%;
+            flex-shrink: 0;
             border: var(--width-separator-thin) solid var(--color-separator-light);
             border-radius: var(--dui-border-radius-card);
             background-color: var(--dui-color-foreground);
@@ -40,15 +43,19 @@
 
     }
 
-    .country-info {
+    .perception-wrapper {
         display: flex;
-        flex-shrink: 0;
-        gap: var(--dui-spacing-small);
+        flex-direction: column;
+        padding: var(--dui-spacing-medium);
 
-        .country-details {
-            display: flex;
+        .perception-card {
             border: var(--width-separator-thin) solid var(--color-separator-light);
             border-radius: var(--dui-border-radius-card);
+            width: 20rem;
+
+            p {
+                padding-left: var(--dui-spacing-small);
+            }
         }
     }
 }
