@@ -1,10 +1,8 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { _cs } from '@togglecorp/fujs';
 import {
-    Container,
     ContainerCard,
     CompactInformationCard,
-    BadgeInput,
 } from '@the-deep/deep-ui';
 /* import Map, {
     MapContainer,
@@ -35,86 +33,61 @@ interface CountryProps {
     className?: string;
 }
 
-const KeySelector = () => 'key';
-const LabelSelector = () => 'label';
-
-const countryNames = [
-    {
-        key: '001',
-        label: 'Afganisthan',
-    },
-    {
-        key: '002',
-        label: 'Nepal',
-    },
-    {
-        key: '003',
-        label: 'Bangkok',
-    },
-];
-
 function Country(props: CountryProps) {
     const {
         className,
     } = props;
 
-    const handleBadge = useCallback(() => {
-        // eslint-disable-next-line no-console
-        console.log('Clicked handle badge::');
-    }, []);
-
     return (
-        <div className={_cs(className, styles.countryMain)}>
-            <div className={styles.countryTags}>
-                <BadgeInput
-                    containerClassName={styles.badgeList}
-                    keySelector={KeySelector}
-                    labelSelector={LabelSelector}
-                    label="Choosen countries:"
-                    name="country_name"
-                    onChange={handleBadge}
-                    options={countryNames}
-                    value="001"
-                />
-            </div>
-            <div className={styles.stats}>
+        <div className={_cs(className, styles.countryWrapper)}>
+            <div className={styles.countryMain}>
                 <div className={styles.countryDetailWrapper}>
-                    <div className={styles.infoCards}>
-                        <CompactInformationCard
-                            icon={<IoChevronForward />}
-                            label="Cases"
-                            value={130}
-                        />
-                        <CompactInformationCard
-                            icon={<IoChevronForward />}
-                            label="Vaccination"
-                            value={645}
-                        />
-                        <CompactInformationCard
-                            icon={<IoChevronForward />}
-                            label="Deaths"
-                            value={100}
-                        />
-                    </div>
-                    <Container
+                    <ContainerCard
+                        className={styles.statusContainer}
+                    >
+                        <div className={styles.infoCards}>
+                            <CompactInformationCard
+                                icon={<IoChevronForward />}
+                                label="Cases"
+                                value={130}
+                            />
+                            <CompactInformationCard
+                                icon={<IoChevronForward />}
+                                label="Vaccination"
+                                value={645}
+                            />
+                            <CompactInformationCard
+                                icon={<IoChevronForward />}
+                                label="Deaths"
+                                value={100}
+                            />
+                        </div>
+                    </ContainerCard>
+                    <ContainerCard
                         className={styles.countryTrend}
                         heading="The trend chart"
                     >
                         CHART---COMPONENT---HERE
-                    </Container>
-                </div>
-                <div className={styles.countryInfo}>
-                    <ContainerCard
-                        className={styles.countryDetails}
-                        footerContent="Country-details"
-                        headerDescription="Country MAP"
-                        headerIcons={<IoFlag />}
-                        heading="<Country-Name>"
-                    >
-                        Country Details here
                     </ContainerCard>
                 </div>
+                <ContainerCard
+                    className={styles.countryInfo}
+                    footerContent="Country-details"
+                    headerDescription="Country MAP"
+                    headerIcons={<IoFlag />}
+                    heading="<Country-Name>"
+                >
+                    Country Details here
+                </ContainerCard>
+
             </div>
+            <ContainerCard
+                className={styles.perceptionWrapper}
+                contentClassName={styles.perceptionCard}
+                footerContent="Data collection not completed - as of March 31st"
+            >
+                <p>COVID-19 Vaccine Perceptions in Africa</p>
+            </ContainerCard>
         </div>
     );
 }
