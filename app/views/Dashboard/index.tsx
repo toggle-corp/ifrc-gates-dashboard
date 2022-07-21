@@ -36,20 +36,20 @@ function Dashboard() {
                 <div className={styles.dashboardButtons}>
                     <div className={styles.filterAndExport}>
                         <Button
-                            className={styles.filterButton}
+                            className={styles.button}
                             icons={<IoFilterSharp />}
-                            variant="nlp-general"
                             name={undefined}
+                            variant="tertiary"
                             onClick={handleAdvancedFilters}
                         >
                             Filter
                         </Button>
 
                         <Button
-                            className={styles.exportButton}
+                            className={styles.button}
                             icons={<IoCloudDownloadOutline />}
-                            variant="nlp-general"
                             name={undefined}
+                            variant="tertiary"
                             onClick={handleExport}
                         >
                             Export

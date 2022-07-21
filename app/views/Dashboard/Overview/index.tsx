@@ -138,13 +138,6 @@ function Overview(props: OverviewProps) {
                     headerDescription={(
                         <p>
                             All Outbreak numbers:
-                            <ul>
-                                <li>Covid 19</li>
-                                <li>Monkey Pox</li>
-                                <li>Ebola</li>
-                                <li>Lorem</li>
-                                <li>Epsum</li>
-                            </ul>
                         </p>
                     )}
                 >

@@ -1,12 +1,15 @@
 .dashboard-navigation {
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-foreground);
     padding: 0 var(--dui-spacing-ultra-large);
+    gap: var(--dui-spacing-medium);
 
     .dashboard-buttons {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: var(--dui-spacing-small);
+        padding: var(--dui-spacing-small) 0;
         gap: var(--dui-spacing-medium);
     }
 
@@ -14,13 +17,7 @@
         display: flex;
         gap: var(--dui-spacing-small);
 
-        .filter-button {
-            border: var(--width-separator-thin) solid var(--color-separator);
-            border-radius: var(--dui-border-radius-button);
-        }
-
-        .export-button {
-            border: var(--width-separator-thin) solid var(--color-separator);
+        .button {
             border-radius: var(--dui-border-radius-button);
         }
     }
@@ -34,6 +31,6 @@
     }
 
     .tab-name {
-        padding: var(--dui-spacing-extra-small);
+        padding: var(--dui-spacing-small) var(--dui-spacing-medium);
     }
 }
