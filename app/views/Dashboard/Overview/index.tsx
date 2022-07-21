@@ -1,18 +1,127 @@
 import React from 'react';
 import {
-    Card,
     ContainerCard,
     CompactInformationCard,
 } from '@the-deep/deep-ui';
 import { _cs } from '@togglecorp/fujs';
 import {
-    IoChevronForward,
+    BarChart,
+    Bar,
+    LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    Tooltip,
+    Legend,
+    ResponsiveContainer,
+    LabelList,
+} from 'recharts';
+import {
+    IoBookmark,
 } from 'react-icons/io5';
+
 import styles from './styles.css';
 
 interface OverviewProps {
     className?: string;
 }
+
+const lineChartData = [
+    {
+        name: 'Mar',
+        uv: 4000,
+        pv: 2400,
+        amt: 2400,
+        range: 3500,
+    },
+    {
+        name: 'Apr',
+        uv: 3000,
+        pv: 1398,
+        amt: 2210,
+        range: 1004,
+    },
+    {
+        name: 'May',
+        uv: 2000,
+        pv: 9800,
+        amt: 2290,
+        range: 1580,
+    },
+    {
+        name: 'June',
+        uv: 2780,
+        pv: 3908,
+        amt: 2000,
+        range: 3000,
+    },
+    {
+        name: 'July',
+        uv: 1890,
+        pv: 4800,
+        amt: 2181,
+        range: 2600,
+    },
+    {
+        name: 'Aug',
+        uv: 2390,
+        pv: 3800,
+        amt: 2500,
+        range: 3900,
+    },
+    {
+        name: 'Sept',
+        uv: 3490,
+        pv: 4300,
+        amt: 2100,
+        range: 2900,
+    },
+];
+
+const barChartData = [
+    {
+        name: 'USA',
+        range: '400M',
+        pv: 2400,
+        amt: 1900,
+    },
+    {
+        name: 'Asia',
+        range: '300M',
+        pv: 1398,
+        amt: 2210,
+    },
+    {
+        name: 'ESAR',
+        range: '200M',
+        pv: 9800,
+        amt: 2010,
+    },
+    {
+        name: 'Eur',
+        range: '270M',
+        pv: 3908,
+        amt: 1800,
+    },
+    {
+        name: 'MENA',
+        range: '170M',
+        pv: 4800,
+        amt: 1181,
+    },
+    {
+        name: 'WCAR',
+        range: '290M',
+        pv: 3800,
+        amt: 2200,
+    },
+    {
+        name: 'Rus',
+        range: '210M',
+        pv: 4300,
+        amt: 2100,
+    },
+];
 
 function Overview(props: OverviewProps) {
     const {
@@ -22,36 +131,104 @@ function Overview(props: OverviewProps) {
     return (
         <div className={_cs(className, styles.overviewMain)}>
             <div className={styles.cardCollection}>
-                <Card className={_cs(styles.globalSurgeCard, styles.cardInfo)}>
+                <ContainerCard
+                    className={_cs(styles.globalSurgeCard, styles.cardInfo)}
+                    heading="Total number of cases"
+                    headingClassName={styles.cardsHeader}
+                    headerDescription={(
+                        <p>
+                            All Outbreak numbers:
+                        </p>
+                    )}
+                >
                     <CompactInformationCard
-                        icon={<IoChevronForward />}
-                        label="Global Surge"
-                        value={200}
+                        className={styles.statCard}
+                        icon={<IoBookmark />}
+                        label="Approx."
+                        spacing="loose"
+                        value={140}
                     />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </Card>
-                <Card className={_cs(styles.trendsCard, styles.cardInfo)}>
-                    <CompactInformationCard
-                        icon={<IoChevronForward />}
-                        label="Trends"
-                        value={150}
-                    />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla sed convallis quam, quis molestie nisi.
-                </Card>
-                <Card className={_cs(styles.regionsCard, styles.cardInfo)}>
-                    <CompactInformationCard
-                        icon={<IoChevronForward />}
-                        label="Regions"
-                        value={180}
-                    />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla sed convallis quam, quis molestie nisi.
-                </Card>
+                </ContainerCard>
+                <ContainerCard
+                    className={_cs(styles.trendsCard, styles.cardInfo)}
+                    heading="Outbreak over last 12 months"
+                    headingClassName={styles.cardsHeader}
+                    contentClassName={styles.responsiveContent}
+                    headerDescription="Average indicator value weighted by country's populations"
+                >
+                    <ResponsiveContainer className={styles.responsiveContainer}>
+                        <LineChart
+                            // width={500}
+                            // height={100}
+                            data={lineChartData}
+                            margin={{
+                                right: 20,
+                            }}
+                        >
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip
+                                allowEscapeViewBox={{
+                                    x: true,
+                                    y: true,
+                                }}
+                            />
+                            <Legend iconType="square" />
+                            <Line
+                                type="monotone"
+                                dataKey="pv"
+                                stroke="#4bda8a"
+                                activeDot={{ r: 8 }}
+                            />
+                            <Line
+                                type="monotone"
+                                dataKey="uv"
+                                stroke="#2169bb"
+                            />
+                            <Line
+                                type="monotone"
+                                dataKey="amt"
+                                stroke="#d2e82d"
+                            />
+                            <Line
+                                type="monotone"
+                                dataKey="range"
+                                stroke="#ba2123"
+                            />
+                        </LineChart>
+                    </ResponsiveContainer>
+                </ContainerCard>
+                <ContainerCard
+                    className={_cs(styles.regionsCard, styles.cardInfo)}
+                    contentClassName={styles.responsiveContent}
+                    heading="Regional Breakdown"
+                    headingClassName={styles.cardsHeader}
+                    headerDescription="Average indicator value weighted by country's populations (Apr 2022)"
+                >
+                    <ResponsiveContainer className={styles.responsiveContainer}>
+                        <BarChart
+                            data={barChartData}
+                        >
+                            <Tooltip
+                                allowEscapeViewBox={{
+                                    x: true,
+                                    y: true,
+                                }}
+                            />
+                            <XAxis dataKey="name">
+                                <LabelList dataKey="name" position="bottom" />
+                            </XAxis>
+                            <Bar dataKey="amt" fill="#38c073">
+                                <LabelList dataKey="range" position="top" />
+                            </Bar>
+                        </BarChart>
+                    </ResponsiveContainer>
+                </ContainerCard>
             </div>
             <div className={styles.mapContainer}>
                 <ContainerCard
                     heading="Map Overview"
+                    headingClassName={styles.cardsHeader}
                 >
                     MAP ---COMPONENT---HERE
                 </ContainerCard>

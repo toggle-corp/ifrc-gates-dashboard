@@ -24,7 +24,8 @@
     --dui-font-weight-light: 400;
     --dui-font-weight-regular: 400;
     --dui-font-weight-medium: 400;
-    --dui-font-weight-bold: 600;
+    --dui-font-weight-bold: 700;
+    --dui-font-weight-heading: 900;
 
     /*
      * Dimensions
@@ -107,7 +108,7 @@
     --color-primary: rgb(33, 105, 187);
     --color-accent: rgb(91, 192, 222);
     --color-danger: rgb(187, 33, 36);
-    --color-success: rgb(34, 187, 51);
+    --color-success: rgb(75, 218, 138);
     --color-warning: rgb(240, 173, 78);
 
     /* COLOR SEPARATOR */

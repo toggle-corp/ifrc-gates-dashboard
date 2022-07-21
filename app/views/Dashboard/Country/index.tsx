@@ -65,52 +65,55 @@ function Country(props: CountryProps) {
 
     return (
         <div className={_cs(className, styles.countryMain)}>
-            <div className={styles.countryDetailWrapper}>
-                <div className={styles.countryTags}>
-                    <BadgeInput
-                        containerClassName={styles.badgeList}
-                        keySelector={KeySelector}
-                        labelSelector={LabelSelector}
-                        label="Choosen countries:"
-                        name="country_name"
-                        onChange={handleBadge}
-                        options={countryNames}
-                        value="001"
-                    />
-                </div>
-                <div className={styles.infoCards}>
-                    <CompactInformationCard
-                        icon={<IoChevronForward />}
-                        label="Cases"
-                        value={130}
-                    />
-                    <CompactInformationCard
-                        icon={<IoChevronForward />}
-                        label="Vaccination"
-                        value={645}
-                    />
-                    <CompactInformationCard
-                        icon={<IoChevronForward />}
-                        label="Deaths"
-                        value={100}
-                    />
-                </div>
-                <Container
-                    className={styles.countryTrend}
-                    heading="The trend chart"
-                >
-                    CHART---COMPONENT---HERE
-                </Container>
+            <div className={styles.countryTags}>
+                <BadgeInput
+                    containerClassName={styles.badgeList}
+                    keySelector={KeySelector}
+                    labelSelector={LabelSelector}
+                    label="Choosen countries:"
+                    name="country_name"
+                    onChange={handleBadge}
+                    options={countryNames}
+                    value="001"
+                />
             </div>
-            <div className={styles.countryInfo}>
-                <ContainerCard
-                    footerContent="Country-details"
-                    headerDescription="Country MAP"
-                    headerIcons={<IoFlag />}
-                    heading="<Country-Name>"
-                >
-                    Country Details here
-                </ContainerCard>
+            <div className={styles.stats}>
+                <div className={styles.countryDetailWrapper}>
+                    <div className={styles.infoCards}>
+                        <CompactInformationCard
+                            icon={<IoChevronForward />}
+                            label="Cases"
+                            value={130}
+                        />
+                        <CompactInformationCard
+                            icon={<IoChevronForward />}
+                            label="Vaccination"
+                            value={645}
+                        />
+                        <CompactInformationCard
+                            icon={<IoChevronForward />}
+                            label="Deaths"
+                            value={100}
+                        />
+                    </div>
+                    <Container
+                        className={styles.countryTrend}
+                        heading="The trend chart"
+                    >
+                        CHART---COMPONENT---HERE
+                    </Container>
+                </div>
+                <div className={styles.countryInfo}>
+                    <ContainerCard
+                        className={styles.countryDetails}
+                        footerContent="Country-details"
+                        headerDescription="Country MAP"
+                        headerIcons={<IoFlag />}
+                        heading="<Country-Name>"
+                    >
+                        Country Details here
+                    </ContainerCard>
+                </div>
             </div>
         </div>
     );
