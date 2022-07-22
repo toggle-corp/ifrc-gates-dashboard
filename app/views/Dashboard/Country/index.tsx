@@ -1,6 +1,15 @@
 import React from 'react';
 import { _cs } from '@togglecorp/fujs';
 import {
+    LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    Tooltip,
+    Legend,
+    ResponsiveContainer,
+} from 'recharts';
+import {
     ContainerCard,
     CompactInformationCard,
 } from '@the-deep/deep-ui';
@@ -32,6 +41,70 @@ const countryLinePaint: mapboxgl.LinePaint = {
 interface CountryProps {
     className?: string;
 }
+
+const outbreakData = [
+    {
+        month: 'Jan',
+        covid: 20,
+        monkeyPox: 5,
+    },
+    {
+        month: 'Feb',
+        covid: 30,
+        monkeyPox: 15,
+    },
+    {
+        month: 'Mar',
+        covid: 35,
+        monkeyPox: 20,
+    },
+    {
+        month: 'Apr',
+        covid: 25,
+        monkeyPox: 25,
+    },
+    {
+        month: 'May',
+        covid: 40,
+        monkeyPox: 35,
+    },
+    {
+        month: 'Jun',
+        covid: 45,
+        monkeyPox: 15,
+    },
+    {
+        month: 'Jul',
+        covid: 55,
+        monkeyPox: 25,
+    },
+    {
+        month: 'Aug',
+        covid: 65,
+        monkeyPox: 55,
+    },
+    {
+        month: 'Sept',
+        covid: 70,
+        monkeyPox: 50,
+    },
+    {
+        month: 'Oct',
+        covid: 65,
+        monkeyPox: 45,
+    },
+    {
+        month: 'Nov',
+        covid: 80,
+        monkeyPox: 65,
+    },
+    {
+        month: 'Dec',
+        covid: 60,
+        monkeyPox: 5,
+    },
+
+];
 
 function Country(props: CountryProps) {
     const {
@@ -65,9 +138,48 @@ function Country(props: CountryProps) {
                     </ContainerCard>
                     <ContainerCard
                         className={styles.countryTrend}
-                        heading="The trend chart"
+                        heading="Outbreaks overview over the last 12 months"
+                        headingSize="extraSmall"
+                        contentClassName={styles.responsiveContent}
                     >
-                        CHART---COMPONENT---HERE
+                        <ResponsiveContainer>
+                            <LineChart
+                                data={outbreakData}
+                            >
+                                <XAxis
+                                    dataKey="month"
+                                    axisLine={false}
+                                    tickLine={false}
+                                />
+                                <YAxis
+                                    axisLine={false}
+                                    tickLine={false}
+                                    padding={{ top: 30 }}
+                                />
+                                <Tooltip />
+                                <Legend
+                                    iconType="rect"
+                                    align="right"
+                                    verticalAlign="top"
+                                />
+                                <Line
+                                    dataKey="covid"
+                                    type="monotone"
+                                    stroke="#FFF84C"
+                                    name="COVID 19"
+                                    strokeWidth={3}
+                                    dot={false}
+                                />
+                                <Line
+                                    dataKey="monkeyPox"
+                                    type="monotone"
+                                    stroke="#2F339C"
+                                    name="Monkey Pox"
+                                    strokeWidth={3}
+                                    dot={false}
+                                />
+                            </LineChart>
+                        </ResponsiveContainer>
                     </ContainerCard>
                 </div>
                 <ContainerCard
